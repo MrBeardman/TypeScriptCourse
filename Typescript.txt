@@ -1,0 +1,19 @@
+Typescript is a Javascript (JS) superset
+Browser cant excecute it
+it gives extra error checking to errors that would be caught during run time
+It compiles back to regular JS
+New features are compiled to JS as "workarounds"
+It adds Types
+we can use next-gen JS featured (and works in older browsers as well)
+ads more features like intefaces or Generics
+ads meta-Programing features liek Decorators /Generics
+helps even in vanilla JS files
+Webpack and Typescript
+Third party librabries
+Type inferance
+Types:
+Core{
+    number(no int or floats)
+    string ('hi',"hi")
+    boolean(true,false) jsut these two, no "truthy" or "falsy" values
+    }
