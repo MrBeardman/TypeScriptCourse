@@ -16,4 +16,5 @@ Core{
     number(no int or floats)
     string ('hi',"hi")
     boolean(true,false) jsut these two, no "truthy" or "falsy" values
+    Object {age:30} 
     }
