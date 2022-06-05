@@ -1,0 +1,14 @@
+Declaring with var
+is funcion scoped when declared inside a fucnion 
+but global scoped when declared outside of a fucntion
+Doesnt stop me when redefining the same variable and overides 
+inital value in declaration/initialization
+
+Declarign with let
+setting the lifespan of the variable at the scope it was declared
+determined by curly braces
+
+Shoudl be used when definign an iterative in a loop
+so tis value is avaliable only inside that loop
+
+as a ruel of thumb, var is never used since let and const provides cleaner scope definition

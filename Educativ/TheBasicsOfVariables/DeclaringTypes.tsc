@@ -1,0 +1,135 @@
+
+//return value to be avaliable outside of the scope
+function mainFunction() {
+    let innerFunction;
+    if (true) {
+        // Environment for capturing start here
+        let variableCapturedByTheInnerFunction = "AvailableToTheInnerFunction";
+        innerFunction = function() {
+            return variableCapturedByTheInnerFunction;
+        }; // Environment for capturing stop here
+    }
+    return innerFunction();
+}
+console.log(mainFunction());
+
+
+
+
+/*
+The following code does not leverage capturing. 
+The function loops five times from lines 10 to 14 
+and adds the function to a list. 
+Then, every function is invoked.
+*/
+
+
+function mainFunction3() {
+    let innerFunction;
+    let listFunctions = [];
+    for (let i = 10; i < 15; i++) {
+        innerFunction = function(param1: number) {
+            return param1;
+        }
+        listFunctions.push(innerFunction(i));
+    }
+    for (let k = 0; k < 5; k++) {
+        console.log(listFunctions[k]);
+    }
+}
+mainFunction3();
+
+
+
+function mainFunction2() {
+    let innerFunction;
+    let listFunctions = [];
+    for (let i = 10; i < 15; i++) {
+        innerFunction = (function(param1: number) {
+            let f = function() {
+                return param1;
+            };
+            return f;
+        })(i * 100);
+        listFunctions.push(innerFunction);
+    }
+    for (let k = 0; k < 5; k++) {
+        console.log(listFunctions[k]());
+    }
+}
+mainFunction2();
+
+function switchFunction(a: number): void {
+
+    switch (a){
+        case 1: 
+        let variableInCase1 = "test";
+        console.log(variableInCase1);
+        break;
+
+        case 2: 
+        let variableInCase2 = "test2";
+        console.log(variableInCase2);
+        break;
+
+        default:
+            console.log("Default");
+    }
+    switchFunction(1);
+    switchFunction(2);
+    switchFunction(3)
+}
+
+//best practice is to use curly braces aroudn each case so they do not share scope
+
+function switchFunction4(a: number): void {
+    switch (a) {
+        case 1: {
+            let variableInCase1 = "test";
+            console.log(variableInCase1);
+            break;
+        }
+        case 2: {
+            let variableInCase1 = "test2";
+            console.log(variableInCase1);
+            break;
+        }
+    }
+}
+switchFunction(1);
+switchFunction(2); 
+
+//Concatinatign a string
+let w = "Value1";
+let x = "this is a string with the value " + w;
+let y = 'this is a string with the value ' + w;
+let z = `this is a string ${w}`;
+console.log(w,x,y,z)
+
+let word = "yes!"
+let stringInterpolation = `this is a string ${word}`; 
+console.log(stringInterpolation)
+let test = `what the hell is this. ${stringInterpolation}`;
+console.log(test)
+
+let numberBook = 10;
+let storeName = "Amazon";
+let title = `My favorite ${numberBook} books on ${storeName}`
+console.log(title);
+
+function getPrice(): number{
+    return 100;
+}
+let description = `The book is about ${2+5} chapters and cost ${getPrice()}$.`;
+console.log(description)
+
+//Multiple line String
+
+let multiline1: string = "Line1\n" + "Line2\n" + "Line3\n";
+
+let multiline2 = `Line1 
+Line2 
+Line3`;
+
+console.log(multiline1);
+console.log(multiline2);
