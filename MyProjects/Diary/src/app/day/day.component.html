@@ -1,0 +1,6 @@
+<mat-card class="example-card" [class.selected]="day === selectedDay" *ngFor="let day of days"(click)="onSelect(day)">
+<mat-card-title>{{day.dayName}}</mat-card-title>
+<mat-card-subtitle>{{day.dayDate}}</mat-card-subtitle>
+</mat-card>
+
+<app-day-detail [day]="selectedDay"></app-day-detail>
