@@ -8,7 +8,7 @@ Declarign with let
 setting the lifespan of the variable at the scope it was declared
 determined by curly braces
 
-Shoudl be used when definign an iterative in a loop
+Shoudl be used when defining an iterative in a loop
 so tis value is avaliable only inside that loop
 
 as a ruel of thumb, var is never used since let and const provides cleaner scope definition

@@ -1,0 +1,11 @@
+var student = "John";
+var nickname = "Bigi";
+var age = "25";
+
+function whoAmI(myName,myNick,myAge){
+
+console.log(`
+Hi, my name is ${myName} (aka ${myNick}),
+and i am ${myAge} years old.
+`)
+};

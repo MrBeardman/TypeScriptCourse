@@ -1,0 +1,50 @@
+Big pocture
+
+MODULES
+provides organization(container) 
+example:
+import {Component ,OnInit} from '@angular/core';
+export class ItemsComponent implements OnInit{}
+
+
+ROUTES
+containts a path and component reference
+we can navigate to routes using routerLink directive using history.pushState,we set a base.ref tag to our index.html //we can use 
+//back and forward buttons to navigate trought the app
+
+COMPONENTS
+atomic building block
+we have:
+Templates
+Is html that tells angular how to rened a component
+include data bindings and other components and directives
+Class
+Properties and methofs of the component class are avaliable to the template
+Services
+
+Zip template and a class together
+Metadata alow angluar ro procees them and put htem together 
+most common is @Component() decorator
+takes a config otpion with the selector, templateUrl,styles,styleUrls,animations,etc
+
+Databinding enables data to flow from the component to template and vice-versa
+includes interpolation, property Bidning etc
+for example:
+{{value}}
+[property] = "value"
+(event) = "handler()"
+[(ngModel)] = "property //two way for example filling forms
+
+DIRECTIVES
+ are a class decorated with @directive
+ A Component is jsut a directive with added template
+
+ SERVICES 
+ is generally jsut a class
+ should do one specific thing
+ takes the burden of bussines login out of a component
+ it is consider best pracise to always use @INJECTABLE so that metadata is generated correctly
+
+ Angular CLI streamlining different technologies to kickstart apps
+ 
+ 
